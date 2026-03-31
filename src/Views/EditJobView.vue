@@ -31,7 +31,7 @@
     const toast = useToast();
 
     const handleSubmit = async () => {
-        const newjob = {
+        const updatedJob = {
             type: form.type,
             title: form.title,
             description: form.description,
@@ -46,12 +46,12 @@
         }
 
         try {
-            const response = await axios.post('/api/jobs', newjob);
-            toast.success('Job added successfully!');
+            const response = await axios.put(`/api/jobs/${jobId}`, updatedJob);
+            toast.success('Job updated successfully!');
             router.push(`/jobs/${response.data.id}`);
         } catch (error) {
             console.error('Error fetching jobs:', error);
-            toast.error('Error adding job. Please try again.');
+            toast.error('Error updating job. Please try again.');
         }
     };
 
