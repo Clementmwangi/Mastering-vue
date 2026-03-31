@@ -2,11 +2,13 @@
 import { PulseLoader } from 'vue-spinner';
 import { reactive, onMounted } from 'vue';
 import { useRoute, RouterLink } from 'vue-router';
+import BackButton from '@/components/BackButton.vue';
 import axios from 'axios';
 
 const router = useRoute();
 
-const jobId = router.params.id;
+const jobId = router.params.id; //gets exact id of url we have clicked as when we click a readmore 
+            //we had already set a url in joblisting.
 
 const state = reactive({
     job: {},
@@ -15,7 +17,7 @@ const state = reactive({
 
 onMounted(async () => {
         try {
-            const response = await axios.get(`http://localhost:5000/jobs/${jobId}`);
+            const response = await axios.get(`/api/jobs/${jobId}`);
             state.job = response.data;
 
         } catch (error) {
@@ -28,6 +30,9 @@ onMounted(async () => {
 </script>
 
 <template>
+
+    <BackButton />
+
     <section v-if="!state.isLoading" class="bg-green-50">
       <div class="container m-auto py-10 px-6">
         <div class="grid grid-cols-1 md:grid-cols-70/30 w-full gap-6">
