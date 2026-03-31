@@ -97,20 +97,6 @@
         "contactPhone": "+1 (803) 646-1439"
       },
       "id": "c7r6xGBhl4U"
-    },
-    {
-      "type": "Full-Time",
-      "title": "Macy Johns",
-      "description": "Dolor numquam ab qui",
-      "salary": "$150K - $175K",
-      "location": "Laboris quos volupta",
-      "company": {
-        "name": "Wilkerson and Slater Inc",
-        "description": "Labore excepturi sed",
-        "contactEmail": "fyzuka@mailinator.com",
-        "contactPhone": "+1 (957) 659-7162"
-      },
-      "id": "y6bf_2R9p74"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
